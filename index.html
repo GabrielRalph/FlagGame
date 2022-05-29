@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script type = "module" src = "./flags.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <flag-game></flag-game>
+  </body>
+
+  <style>
+
+    .flags {
+      display: grid;
+    }
+
+    .flags > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    h5 {
+      padding-right: 1em;
+    }
+
+    .scores {
+      display: flex;
+      border-radius: 0.25em;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0.25em;
+      /* background: #fff0f5; */
+      border: 1px solid black;
+    }
+
+    .scores > div > div {
+      padding: 0.25em;
+    }
+
+    .scores > div:first-of-type > div:nth-of-type(n+2) {
+      border-top: 1px solid black;
+    }
+    .scores > div:last-of-type {
+      border-left: 1px solid black;
+    }
+    .scores .label {
+      font-size: 0.7em;
+    }
+
+
+    .scores > .total {
+      width: 100%;
+      font-size: 2em;
+      padding: 0.125em 0.5em;
+      text-align: right;
+    }
+
+
+    .answer-box {
+      font-size: 3em;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin: 0.2em;
+    }
+
+    .grid {
+      --size: 50vw;
+      --rows: 2;
+      --cell-size: calc(var(--size) / var(--rows));
+
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      width: var(--size);
+      margin: auto;
+    }
+
+    .grid div {
+      width: var(--cell-size);
+      height: var(--cell-size);
+    }
+
+    .grid div:nth-of-type(2n) {
+      grid-column: 2;
+    }
+
+    .grid div:nth-of-type(2n + 1) {
+      grid-column: 1;
+    }
+
+    .grid div:nth-of-type(3-n) {
+      grid-row: 1;
+    }
+
+    .grid div:nth-of-type(n+3) {
+      grid-row: 2;
+    }
+
+    .grid > div img {
+      max-width: calc(var(--cell-size) - 2em);
+      max-height: calc(var(--cell-size) - 2em);
+
+      padding: 0.5em;
+      margin: 0.5em;
+      border-radius: 1em;
+      cursor: pointer;
+      transition: 0.3s ease-in transform;
+    }
+
+    .grid img:hover {
+      outline: 2px solid blue;
+    }
+
+
+    .question {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .question-box {
+        display: flex;
+    }
+    .question-box img {
+      margin: auto;
+    }
+
+
+    .letter-input {
+      font-size: 0.5em;
+    }
+
+    .high-score  {
+      font-size: 2em;
+    }
+
+  </style>
+</html>
